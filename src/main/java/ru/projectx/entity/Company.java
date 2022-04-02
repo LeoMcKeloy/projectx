@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.projectx.dto.CompanyDto;
 
 import javax.persistence.*;
 
@@ -18,4 +19,11 @@ public class Company {
     private Integer id;
 
     private String name;
+
+    public static Company fromCompanyDto(CompanyDto companyDto) {
+        return Company.builder()
+                .id(companyDto.getId())
+                .name(companyDto.getName())
+                .build();
+    }
 }

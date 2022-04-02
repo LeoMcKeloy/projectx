@@ -10,7 +10,7 @@ public class CompanyDto {
     private Integer id;
     private String name;
 
-    public CompanyDto fromCompany(Company company) {
+    public static CompanyDto fromCompany(Company company) {
         return CompanyDto.builder()
                 .id(company.getId())
                 .name(company.getName())
